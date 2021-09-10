@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """ Run a command repeatedly and output differences in output
 
         Usage:
@@ -7,7 +7,6 @@
             -n seconds: Update interval, default 2
             -i pattern: Ignore changes matching given regex
 """
-from __future__ import print_function
 import subprocess, sys, datetime, time, re
 
 def main():
