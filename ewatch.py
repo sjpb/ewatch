@@ -20,7 +20,7 @@ def main():
     old = ['', ''] # stdout, stderr
     while True:
         timestamp = datetime.datetime.now().isoformat()
-        proc = subprocess.Popen(cmd, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+        proc = subprocess.Popen(cmd, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, universal_newlines=True)
         new = [s or '' for s in proc.communicate()] # stdout, stderr
         new_clean = [re.sub(pattern, '', s) for s in new] if pattern else new
         if old != new_clean:
